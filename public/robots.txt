@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sunny-blog.example.com/sitemap.xml

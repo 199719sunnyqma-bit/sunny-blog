@@ -5,6 +5,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        coral: '#F4A261',
+        sunny: '#F4D35E',
+        apricot: '#FFCB69',
+        cream: '#FFFBF5',
+        ivory: '#FFF8E7',
+        sand: '#F5E6D3',
+        coffee: '#4A3728',
+        warmgray: '#7A6B5D',
+        lightbrown: '#C4B5A5',
+        sunset: '#E07A5F',
+        mint: '#81B29A',
+        skyblue: '#A8DADC',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -38,16 +50,11 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+      },
+      fontFamily: {
+        sans: ['"Noto Sans TC"', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+        caveat: ['Caveat', 'cursive'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -55,9 +62,6 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
         xs: "calc(var(--radius) - 6px)",
-      },
-      boxShadow: {
-        xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
       },
       keyframes: {
         "accordion-down": {
@@ -68,15 +72,15 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "caret-blink": {
-          "0%,70%,100%": { opacity: "1" },
-          "20%,50%": { opacity: "0" },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(8px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "float": "float 2s ease-in-out infinite",
       },
     },
   },
