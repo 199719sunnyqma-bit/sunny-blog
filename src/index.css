@@ -58,6 +58,77 @@
   .container-narrow {
     @apply max-w-[900px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8;
   }
+
+  /* Artistic geometric divider */
+  .geo-divider {
+    @apply relative h-24 md:h-32 overflow-hidden;
+    background: linear-gradient(135deg, #F4D35E15 0%, #F4A26115 50%, #E07A5F15 100%);
+  }
+
+  .geo-divider::before {
+    content: '';
+    @apply absolute inset-0;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(244, 163, 97, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(244, 211, 94, 0.15) 0%, transparent 50%);
+  }
+
+  /* Art frame decoration for images */
+  .art-frame {
+    @apply relative;
+    padding: 12px;
+    background: linear-gradient(135deg, #FFF8E7 0%, #F5E6D3 100%);
+    border-radius: 4px;
+    box-shadow: 
+      0 4px 20px rgba(74, 55, 40, 0.08),
+      inset 0 0 0 1px rgba(196, 181, 165, 0.3);
+  }
+
+  .art-frame::before {
+    content: '';
+    @apply absolute inset-3 border border-coral/20 rounded-sm pointer-events-none;
+  }
+
+  /* Watercolor wash background */
+  .watercolor-wash {
+    @apply relative overflow-hidden;
+  }
+
+  .watercolor-wash::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-30;
+    background-image: url('/images/art-deco-1.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(40px) saturate(1.2);
+    mix-blend-mode: soft-light;
+  }
+
+  /* Geometric floating shapes */
+  .geo-shape-circle {
+    @apply absolute rounded-full pointer-events-none;
+    background: radial-gradient(circle, rgba(244, 163, 97, 0.12) 0%, transparent 70%);
+  }
+
+  .geo-shape-triangle {
+    @apply absolute pointer-events-none;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    opacity: 0.08;
+  }
+
+  /* Artistic card hover */
+  .art-card {
+    @apply transition-all duration-500;
+    box-shadow: 0 2px 12px rgba(74, 55, 40, 0.06);
+  }
+
+  .art-card:hover {
+    box-shadow: 
+      0 12px 40px rgba(74, 55, 40, 0.12),
+      0 0 0 1px rgba(244, 163, 97, 0.2);
+  }
 }
 
 @layer utilities {

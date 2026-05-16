@@ -5,8 +5,30 @@ import { slideUpStagger, slideUpItem } from '@/lib/animations';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="section-padding bg-ivory">
-      <div className="container-narrow">
+    <section id="contact" className="section-padding bg-ivory relative overflow-hidden">
+      {/* Geometric decorations */}
+      <motion.div
+        className="absolute top-[10%] right-[5%] w-16 h-16 rounded-full border border-coral/15"
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-[20%] left-[3%] w-10 h-10 opacity-10"
+        style={{ background: '#F4A261', clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)' }}
+        animate={{ rotate: [0, 15, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <div
+        className="absolute top-[30%] left-[8%] w-6 h-6 opacity-10 rotate-45"
+        style={{ background: '#F4D35E' }}
+      />
+
+      {/* Watercolor art accent */}
+      <div className="absolute -bottom-10 -right-10 w-48 h-48 md:w-72 md:h-72 opacity-[0.04] pointer-events-none">
+        <img src="/images/art-deco-1.jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+      </div>
+
+      <div className="container-narrow relative z-10">
         <SectionTitle label="聯絡我" title="一起合作吧！" />
 
         <motion.p
@@ -27,17 +49,24 @@ export default function ContactSection() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="bg-white rounded-2xl p-6 text-center"
+            className="bg-white rounded-2xl p-6 text-center relative overflow-hidden group"
             variants={slideUpItem}
           >
+            {/* Subtle art decoration */}
+            <div className="absolute top-0 right-0 w-16 h-16 opacity-5">
+              <img src="/images/art-sun.jpg" alt="" className="w-full h-full object-contain" aria-hidden="true" />
+            </div>
             <Envelope size={32} weight="regular" className="text-coral mx-auto mb-3" />
             <h3 className="text-lg font-medium text-coffee mb-1">電子信箱</h3>
             <p className="text-warmgray">199719sunnyqma@gmail.com</p>
           </motion.div>
           <motion.div
-            className="bg-white rounded-2xl p-6 text-center"
+            className="bg-white rounded-2xl p-6 text-center relative overflow-hidden group"
             variants={slideUpItem}
           >
+            <div className="absolute top-0 right-0 w-16 h-16 opacity-5">
+              <img src="/images/art-deco-2.jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+            </div>
             <Handshake size={32} weight="regular" className="text-coral mx-auto mb-3" />
             <h3 className="text-lg font-medium text-coffee mb-1">合作邀約</h3>
             <p className="text-warmgray">歡迎品牌合作與活動邀請</p>
@@ -55,7 +84,7 @@ export default function ContactSection() {
           <div className="flex justify-center gap-4">
             <a
               href="#"
-              className="w-14 h-14 rounded-full bg-coral text-white flex items-center justify-center hover:bg-sunset hover:scale-105 transition-all duration-300"
+              className="w-14 h-14 rounded-full bg-coral text-white flex items-center justify-center hover:bg-sunset hover:scale-105 transition-all duration-300 shadow-md"
               aria-label="Instagram"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -64,7 +93,7 @@ export default function ContactSection() {
             </a>
             <a
               href="#"
-              className="w-14 h-14 rounded-full bg-coral text-white flex items-center justify-center hover:bg-sunset hover:scale-105 transition-all duration-300"
+              className="w-14 h-14 rounded-full bg-coral text-white flex items-center justify-center hover:bg-sunset hover:scale-105 transition-all duration-300 shadow-md"
               aria-label="Facebook"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">

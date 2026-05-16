@@ -33,8 +33,31 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="section-padding bg-ivory">
-      <div className="container-main">
+    <section className="section-padding bg-ivory relative overflow-hidden">
+      {/* Geometric art decorations */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-coral/30 via-sunny/50 to-coral/30" />
+      <motion.div
+        className="absolute top-[20%] left-[3%] w-10 h-10 opacity-10"
+        style={{ background: '#F4A261', clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
+        animate={{ rotate: [0, 45, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute top-[40%] right-[5%] w-16 h-16 rounded-full border border-coral/15"
+        animate={{ scale: [1, 1.15, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <div
+        className="absolute bottom-[15%] left-[8%] w-8 h-8 opacity-10 rotate-12"
+        style={{ background: '#F4D35E', clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)' }}
+      />
+
+      {/* Art deco geometric image */}
+      <div className="absolute bottom-0 right-0 w-48 h-32 md:w-72 md:h-48 opacity-[0.04] pointer-events-none">
+        <img src="/images/art-deco-2.jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+      </div>
+
+      <div className="container-main relative z-10">
         <SectionTitle label="探索更多" title="一起發現生活的美好" />
 
         <motion.div
@@ -53,15 +76,17 @@ export default function FeaturesSection() {
               >
                 <Link
                   to={feature.link}
-                  className="block bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+                  className="block bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group art-card"
                 >
-                  <div className="h-48 md:h-52 overflow-hidden">
+                  <div className="h-48 md:h-52 overflow-hidden relative">
                     <img
                       src={feature.image}
                       alt={feature.title}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
                     />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-coffee/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <div className="p-6 md:p-7">
                     <Icon size={32} weight="regular" className="text-coral mb-3" />

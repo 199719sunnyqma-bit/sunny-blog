@@ -1,17 +1,67 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CaretDown } from 'phosphor-react';
-import WatercolorDot from '@/components/WatercolorDot';
 import { heroTextStagger, heroTextItem } from '@/lib/animations';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[600px] h-[calc(100vh-72px)] max-h-[900px] flex items-center justify-center overflow-hidden"
+    <section
+      className="relative min-h-[600px] h-[calc(100vh-72px)] max-h-[900px] flex items-center justify-center overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #F4D35E 0%, #F4A261 100%)' }}
     >
-      <WatercolorDot color="#F4D35E" size={200} opacity={0.2} className="top-10 right-10" />
-      <WatercolorDot color="#F4A261" size={300} opacity={0.15} className="bottom-10 left-10" />
-      <WatercolorDot color="#E07A5F" size={150} opacity={0.1} className="top-1/3 right-1/3" />
+      {/* Watercolor art background */}
+      <div className="absolute inset-0 opacity-20">
+        <img
+          src="/images/art-deco-1.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Geometric floating shapes */}
+      <motion.div
+        className="absolute top-[15%] left-[10%] w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white/20"
+        animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute top-[25%] right-[15%] w-10 h-10 md:w-16 md:h-16"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)',
+          clipPath: 'polygon(50% 0%, 100% 100%, 0% 100%)',
+        }}
+        animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+      />
+      <motion.div
+        className="absolute bottom-[20%] left-[20%] w-8 h-8 md:w-12 md:h-12 rounded-full bg-white/10"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+      />
+      <motion.div
+        className="absolute bottom-[30%] right-[10%] w-12 h-12 md:w-20 md:h-20 border border-white/15 rotate-45"
+        animate={{ rotate: [45, 55, 45], y: [0, -10, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+      />
+      <motion.div
+        className="absolute top-[60%] left-[5%] w-6 h-6 md:w-10 md:h-10"
+        style={{
+          background: 'rgba(255,255,255,0.12)',
+          clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+        }}
+        animate={{ rotate: [0, 180, 360] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+      />
+
+      {/* Sun art decoration */}
+      <motion.div
+        className="absolute top-[10%] right-[8%] w-20 h-20 md:w-32 md:h-32 opacity-25"
+        animate={{ rotate: [0, 360] }}
+        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+      >
+        <img src="/images/art-sun.jpg" alt="" className="w-full h-full object-contain" aria-hidden="true" />
+      </motion.div>
 
       <motion.div
         className="relative z-10 text-center px-4"
