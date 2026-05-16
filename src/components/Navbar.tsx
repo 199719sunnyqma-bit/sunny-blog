@@ -10,6 +10,7 @@ const navLinks = [
   { label: '旅遊景點', href: '/travel' },
   { label: '美食餐廳', href: '/food' },
   { label: '寵物日記', href: '/pets' },
+  { label: '餐廳合作', href: '/collaborate' },
   { label: '聯絡我們', href: '/#contact' },
 ];
 
