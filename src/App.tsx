@@ -5,6 +5,7 @@ import TravelPage from '@/pages/TravelPage';
 import FoodPage from '@/pages/FoodPage';
 import PetsPage from '@/pages/PetsPage';
 import CollaboratePage from '@/pages/CollaboratePage';
+import SeoPage from '@/pages/SeoPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/food" element={<FoodPage />} />
           <Route path="/pets" element={<PetsPage />} />
           <Route path="/collaborate" element={<CollaboratePage />} />
+          <Route path="/seo" element={<SeoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
