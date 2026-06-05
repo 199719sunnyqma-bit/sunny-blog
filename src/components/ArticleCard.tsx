@@ -12,6 +12,7 @@ interface ArticleCardProps {
   readTime?: string;
   likes?: number;
   href?: string;
+  slug?: string;
 }
 
 export default function ArticleCard({
@@ -25,10 +26,12 @@ export default function ArticleCard({
   readTime,
   likes,
   href = '#',
+  slug,
 }: ArticleCardProps) {
+  const linkTo = slug ? `/article/${slug}` : href;
   return (
     <motion.a
-      href={href}
+      href={linkTo}
       className="block bg-ivory rounded-2xl overflow-hidden art-card group"
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 30 }}

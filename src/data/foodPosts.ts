@@ -8,9 +8,22 @@ export interface FoodPost {
   rating: number;
   price: string;
   date: string;
+  slug?: string;
 }
 
 export const foodPosts: FoodPost[] = [
+  {
+    id: 0,
+    image: '/images/kcj-hero.jpg',
+    region: '新竹',
+    type: '串燒',
+    title: '新竹串燒店推薦｜下班後想喝一杯，竹北串燒店我選這家！',
+    excerpt: '想找新竹串燒店或竹北串燒店？烤場見位於竹北光明一路，提供美味串燒、烤魚、櫛瓜、炒麵，適合下班小酌、朋友聚餐。',
+    rating: 4.7,
+    price: '$$',
+    date: '2025/05/18',
+    slug: 'kaochangjian',
+  },
   {
     id: 1,
     image: '/images/post-2.jpg',

@@ -73,6 +73,7 @@ export default function FoodPosts() {
                 tags={[post.region, post.type]}
                 rating={post.rating}
                 price={post.price}
+                slug={post.slug}
               />
             ))}
           </motion.div>
