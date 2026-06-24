@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Heart, Star } from 'phosphor-react';
 
@@ -30,9 +31,9 @@ export default function ArticleCard({
 }: ArticleCardProps) {
   const linkTo = slug ? `/article/${slug}` : href;
   return (
-    <motion.a
-      href={linkTo}
-      className="block bg-ivory rounded-2xl overflow-hidden art-card group"
+    <Link to={linkTo} className="block">
+    <motion.div
+      className="bg-ivory rounded-2xl overflow-hidden art-card group cursor-pointer"
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 30 }}
       viewport={{ once: true }}
@@ -91,6 +92,7 @@ export default function ArticleCard({
           </div>
         </div>
       </div>
-    </motion.a>
+    </motion.div>
+    </Link>
   );
 }

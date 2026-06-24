@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import PageLayout from '@/components/PageLayout';
 import HomePage from '@/pages/HomePage';
 import TravelPage from '@/pages/TravelPage';
@@ -10,7 +10,7 @@ import ArticlePage from '@/pages/ArticlePage';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<HomePage />} />
@@ -22,6 +22,6 @@ export default function App() {
           <Route path="/article/:slug" element={<ArticlePage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

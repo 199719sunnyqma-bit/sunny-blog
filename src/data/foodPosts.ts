@@ -14,6 +14,18 @@ export interface FoodPost {
 export const foodPosts: FoodPost[] = [
   {
     id: 0,
+    image: '/images/mtcq-hero.jpg',
+    region: '南投',
+    type: '咖啡廳',
+    title: '日月潭附近咖啡廳推薦｜南投日月潭咖啡廳明潭傳奇風物館',
+    excerpt: '想找日月潭附近咖啡廳、南投日月潭咖啡廳？明潭傳奇風物館結合紅玉紅茶、特色套餐、甜點與在地風味。',
+    rating: 4.6,
+    price: '$$',
+    date: '2025/05/20',
+    slug: 'mingtan',
+  },
+  {
+    id: 1,
     image: '/images/kcj-hero.jpg',
     region: '新竹',
     type: '串燒',
